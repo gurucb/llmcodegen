@@ -1,5 +1,5 @@
-# llmcodegen
-## Leveraging LLM generate queries for multiple databases and even APIs. Vision is to include both SQL (Traditional MYSQL, MSSQL, PostgreSQL, Oracle) and NOSQL (Mongo,Cassandra, Gremlin, KQL). For generating prompts we will build and also leverage existing platforms like
+## LLM Query Engine
+#### Leveraging LLM generate queries for multiple databases and even APIs. Vision is to include both SQL (Traditional MYSQL, MSSQL, PostgreSQL, Oracle) and NOSQL (Mongo,Cassandra, Gremlin, KQL). For generating prompts we will build and also leverage existing platforms like
 * LLM Frameworks
     - Langchain:        https://docs.langchain.com/docs/ 
     - LLMA_Index:       https://github.com/jerryjliu/llama_index
