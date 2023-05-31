@@ -9,4 +9,4 @@ And also leverage Chain of Thought from Google for prompt engineering.
 
 Overall components and interactions
 
-architecture.png
+![alt text](https://github.com/gurucb/llmcodegen/blob/main/architecture.png)
