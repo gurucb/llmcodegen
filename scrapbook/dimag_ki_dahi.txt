@@ -1,7 +1,14 @@
 From this solution, 
 1. Generate queries (Text to SQL)
+    Input: Text     Output: [text,Query]
 2. Generate & execute queries (Text to SQL to Results)
+    Input: Text     Output: Dataset / Recordset
 3. Explain queries (Queries to Text)
+    Input: Query    Output: [query,Text]
 4. Re-write queries (Queries to Queries)
+    Input: Query    Output: [input_query,output_query]
 5. Optimize queries (Queries to Queries)
+    Input: Query    Output: [input_query, output_query]
 6. Translate Queries (Query_SQL to Query_KQL)
+    Input: Query    Output:[input_query, output_query]
+7. Generate Schema
