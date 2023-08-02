@@ -3,7 +3,7 @@ from typing import List
 
 import MetadataManager
 
-class KQLMetadataManager(MetadataManager):
+class KQLMetadataManager(MetadataManager.MetadataManager):
     def __init__(self):
         self.kustoClusterURL = None
         self.json = '''{

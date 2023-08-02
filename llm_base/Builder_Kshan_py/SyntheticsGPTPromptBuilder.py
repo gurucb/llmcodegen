@@ -2,7 +2,7 @@ from typing import List
 
 import PromptBuilder
 
-class SyntheticsGPTPromptBuilder(PromptBuilder):
+class SyntheticsGPTPromptBuilder(PromptBuilder.PromptBuilder):
     def buildPrompts(self, tableschema: List[str], userPrompt: str) -> List[str]:
         prompts = []
         print("**************************")

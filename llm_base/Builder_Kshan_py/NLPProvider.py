@@ -3,7 +3,7 @@ from abc import ABC, abstractmethod
 
 import INLPProvider
 
-class NLPProvider(INLPProvider):
+class NLPProvider(INLPProvider.INLPProvider):
     def __init__(self, stopWords: List[str], wordBreaker: str):
         self.stopWords = stopWords
         self.wordBreaker = wordBreaker

@@ -4,7 +4,7 @@ import asyncio
 
 import QueryExecutor
 
-class SQLExecutor(QueryExecutor):
+class SQLExecutor(QueryExecutor.QueryExecutor):
     async def execute_query(self, query_type: str, query: str) -> str:
         results = ""
 

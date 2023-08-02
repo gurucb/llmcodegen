@@ -1,3 +1,4 @@
+"""
 from typing import List
 from azure.ai.language.lro import CompletionsOptions
 from azure.core.credentials import AzureKeyCredential
@@ -5,7 +6,7 @@ from azure.ai.language import LanguageModelCredential, LanguageModelApi
 
 import LLMClient
 
-class GPTClient(LLMClient):
+class GPTClient(LLMClient.LLMClient):
     def __init__(self):
         super().__init__()
         self.model_name = "syntheticsKQL"
@@ -35,3 +36,51 @@ class GPTClient(LLMClient):
     async def invoke_llm_command_async(self, prompts: List[str], model: str) -> str:
         kql_query = await self.get_completions_async(prompts)
         return kql_query
+
+    """
+
+
+import openai
+from typing import List
+import LLMClient
+
+class GPTClient(LLMClient.LLMClient): 
+    def __init__(self):
+        super().__init__()
+        self.model_name = "syntheticsKQL"
+
+    async def get_completions_async(self, prompts: List[str]) -> str:
+        final_prompt = "\n".join(prompts)
+
+        llmClient = LLMClient.LLMClient()
+        oaiClient = llmClient.oai_client
+
+        completionsResponse = oaiClient.Completion.create(
+            prompts=[final_prompt],
+            temperature=self.temperature,
+            max_tokens=self.max_tokens,
+            stop_sequences=["#", ";"],
+            nucleus_sampling_factor=self.nucleus_sampling_factor,
+            frequency_penalty=self.frequency_penalty,
+            presence_penalty=self.presence_penalty,
+            deployment_or_model_name=self.model_name,
+            )
+
+        completions = completionsResponse.value
+        response_kql = completions[0].text
+        return response_kql
+
+    def invoke_llm_command_async(self, prompts: List[str], model: str) -> str:
+        kql_query = self.get_completions_async(prompts)
+        return kql_query
+
+
+
+
+
+
+
+
+
+
+

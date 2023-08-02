@@ -3,7 +3,7 @@ from abc import ABC, abstractmethod
 
 import IPromptBuilder
 
-class PromptBuilder(IPromptBuilder):
+class PromptBuilder(IPromptBuilder.IPromptBuilder):
     @abstractmethod
     def buildPrompts(self, tableschema: List[str], userPrompt: str) -> List[str]:
         pass

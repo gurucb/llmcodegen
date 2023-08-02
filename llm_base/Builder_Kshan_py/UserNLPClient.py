@@ -2,7 +2,7 @@ from typing import List
 
 import NLPProvider
 
-class UserNLPClient(NLPProvider):
+class UserNLPClient(NLPProvider.NLPProvider):
     def __init__(self):
         pass
 
