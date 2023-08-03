@@ -3,8 +3,8 @@ import NLPAdapter, DomainAdapter, PromptAdapter, UserNLPClient, KQLMetadataManag
 
 class PromptController:
     def __init__(self):
-        self.nlp_client = UserNLPClient.UserNLPClient()
-        self.kql_metadata_manager = KQLMetadataManager.KQLMetadataManager()
+        self.nlp_client = None
+        self.kql_metadata_manager = None
         self.table_schema = []
         self.table_names = []
         self.prompts = []
@@ -14,9 +14,9 @@ class PromptController:
         self.persona = persona
 
     def initialize_prompt_controller(self) -> None:
-        self.nlp_client = NLPAdapter.getNLPClient(self.persona)
-        self.kql_metadata_manager = DomainAdapter.getMetadataManager()
-        self.prompt_builder = PromptAdapter.getPromptBuilder()
+        self.nlp_client = NLPAdapter.NLPAdapter.getNLPClient(self.persona)
+        self.kql_metadata_manager = DomainAdapter.DomainAdapter.getMetadataManager()
+        self.prompt_builder = PromptAdapter.PromptAdapter.get_prompt_builder()
 
     def build_prompts(self, user_prompt: str) -> List[str]:
         self.table_names = self.nlp_client.getEntities(user_prompt)

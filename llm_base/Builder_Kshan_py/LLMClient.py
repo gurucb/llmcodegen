@@ -21,6 +21,5 @@ class LLMClient(ILLMClient.ILLMClient):
     def set_properties(self):
         self.oai_client = openai_client.OpenAI_Client(api_key=self.api_key)
 
-    @abstractmethod
     def invoke_llm_command_async(self, prompts, model):
         pass
